@@ -1,0 +1,2 @@
+curl -O https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
+tar -xjvf go1.7.3.linux-amd64.tar.gz
