@@ -1,0 +1,43 @@
+[
+    {
+        "status": "major", 
+        "new_global_status": "major", 
+        "service": "rkt", 
+        "changetype": "single", 
+        "message": "Latest Job failed.", 
+        "changedate": 1477567268.192901
+    }, 
+    {
+        "status": "minor", 
+        "new_global_status": "minor", 
+        "service": "rkt", 
+        "changetype": "single", 
+        "message": "Something failed", 
+        "changedate": 1477550155.805211
+    }, 
+    {
+        "status": "major", 
+        "new_global_status": "major", 
+        "service": "rkt", 
+        "changetype": "single", 
+        "message": "Oh! We failed.", 
+        "changedate": 1477550072.262993
+    }, 
+    {
+        "status": "good", 
+        "new_global_status": "good", 
+        "service": "rkt", 
+        "changetype": "single", 
+        "message": "THis is good", 
+        "changedate": 1477549805.689211
+    }, 
+    {
+        "services": [
+            "rkt"
+        ], 
+        "status": "good", 
+        "changetype": "multiple", 
+        "message": "Everything seems to be working.", 
+        "changedate": 1346176177.143926
+    }
+]

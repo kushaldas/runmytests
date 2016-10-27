@@ -1,0 +1,13 @@
+{
+    "global_info": "", 
+    "global_status": "minor", 
+    "global_verbose_status": "Minor service disruption", 
+    "services": {
+        "rkt": {
+            "message": "Latest Job failed.", 
+            "name": "rkt", 
+            "status": "major", 
+            "url": "http://coreos.com"
+        }
+    }
+}

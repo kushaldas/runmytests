@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing upstream</title>
+    <style type="text/css">
+      {% include 'style.css' %}
+    </style>
+    <link rel="alternate" type="application/rss+xml" title="Changes feed" href="/changes.rss" />
+     <meta http-equiv="refresh" content="60" />
+     <link rel="shortcut icon" href="/status-{{global_status}}.ico">
+  </head>
+  <body>
+    <div id="header">
+      <div class="navbar">
+        <div class="constraint">
+          <h1 class="name"><a href="/">Testing upstream</a></h1>
+          <ul>
+            <li><a href="irc://irc.freenode.net/fedora-cloud">#fedora-cloud on irc.freenode.net</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="headercontent {% if global_status == "good" %}
+                                  all-okay
+                                {% elif global_status == "scheduled" %}
+                                  minor-incident
+                                {% elif global_status == "minor" %}
+                                  minor-incident
+                                {% elif global_status == "major" %}
+                                  major-incident
+                                {% endif %}">
+        <div class="constraint">
+          <h1 class="nomargin">{{verbose_global_status}}</h1>
+        </div>
+      </div>
+      {% if global_info != "" %}
+      <div class="headerstatus">
+        <div class="constraint">
+          <h3 class="nomargin">{{global_info}}</h3>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <div id="footer" class="constraint">
+      <p class="left">
+        &copy; {{year}} Kushal Das<br>
+      </p>
+      <p class="right">
+        Silk Icons by <a href="http://www.famfamfam.com/lab/icons/silk/">famfamfam</a><br />
+        <a href="http://git.fedorahosted.org/git/fedora-status">Open Source</a>
+      </p>
+    </div>
+  </body>
+</html>

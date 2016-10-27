@@ -1,0 +1,31 @@
+{% extends "global.html" %}
+
+{% block global_status_text %}Minor service disruption.{% endblock %}
+{% block global_extra_info %}
+<div class="headerstatus">
+  <div class="constraint">
+    <h3 class="nomargin">Our main datacenter (phx2) is currently experiencing connection issues.</h3>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="constraint">
+  {% for service in statuses %}
+  <div class="content topmargin {% if statuses[service].status == "good" %} green 
+                                {% elif statuses[service].status == "scheduled" %} orange 
+                                {% elif statuses[service].status == "minor" %} orange 
+                                {% else %} red 
+                                {% endif %} status {{ loop.cycle('status-left', 'status-right') }}">
+    <div class="header">
+      <b>{{ statuses[service].name }}</b>
+      <span class="right">{{ service }}</span>
+    </div>
+    <div class="pad">
+      <img src="static/status-{{ statuses[service].status }}.png" alt="{{ statuses[service].status }}" style="vertical-align: middle; margin: -3px 5px 0 0;" />
+      {{ statuses[service].message }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
